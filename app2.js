@@ -66,7 +66,7 @@ function renderText(textGroup, newXScale, chosenXAxis) {
 
     textGroup.transition()
       .duration(1000)
-      .attr("cx", d => newXScale(d[chosenXAxis]));
+      .attr("x", d => newXScale(d[chosenXAxis]));
   
     return textGroup;
 }
