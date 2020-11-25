@@ -45,8 +45,8 @@ function xScale(censusData, chosenXAxis) {
 function yScale(censusData, chosenYAxis) {
   // create scales
   var yLinearScale = d3.scaleLinear()
-    .domain([d3.min(censusData, d => d[chosenYAxis]) * 0.8,
-      d3.max(censusData, d => d[chosenYAxis]) * 1.2
+    .domain([d3.min(censusData, d => d[chosenYAxis]) * .5,
+      d3.max(censusData, d => d[chosenYAxis]) * 1
     ])
     .range([height, 0]);
 
@@ -306,10 +306,10 @@ d3.csv("data.csv").then(function(censusData, err) {
       var value = d3.select(this).attr("value");
       if (value !== chosenYAxis) {
 
-        // replaces chosenXAxis with value
+        // replaces chosenYAxis with value
         chosenYAxis = value;
 
-        // console.log(chosenXAxis)
+        // console.log(chosenYAxis)
 
         // functions here found above csv import
         // updates x scale for new data
